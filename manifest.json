@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Form Filler",
+    "name": "AI Form Filler",
     "version": "1.0",
     "description": "Form filler for chrome",
     "permissions": [
