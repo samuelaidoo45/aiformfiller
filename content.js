@@ -1,5 +1,5 @@
 function collectInputValues() {
-    const inputs = document.querySelectorAll('input, textarea');
+    const inputs = document.querySelectorAll('input, textarea,select');
     const inputValues = [];
 
 
@@ -54,7 +54,34 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             if (inputField) {
                 inputField.value = item.value;
             }
+
+            
         });
+
+        //For select elements,radio and checkbox elements randomly select an option
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            const options = select.options;
+            const randomIndex = Math.floor(Math.random() * options.length);
+            select.selectedIndex = randomIndex;
+        });
+
+        const radios = document.querySelectorAll('input[type="radio"]');
+
+        radios.forEach(radio => {
+            const randomIndex = Math.floor(Math.random() * 2);
+            radio.checked = randomIndex === 0;
+        });
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        checkboxes.forEach(checkbox => {
+            const randomIndex = Math.floor(Math.random() * 2);
+            checkbox.checked = randomIndex === 0;
+        });
+
+        
+
     })
     .catch(error => console.log('Error:', error));
         //sendResponse(values);
