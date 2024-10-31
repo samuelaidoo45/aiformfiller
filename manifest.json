@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "AI Form Filler",
-    "version": "1.0",
-    "description": "Form filler for chrome",
+    "version": "1.1.1",
+    "description": "An AI form filler that fills all inputs on a page with realistic data.",
     "permissions": [
       "activeTab",
       "scripting"
@@ -12,7 +12,7 @@
     },
     "action": {
       "default_popup": "popup.html",
-      "default_icon": "icons/icon.png"
+      "default_icon": "icons/iconn.png" 
     },
     "content_scripts": [
       {
